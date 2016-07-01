@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e805c0af-5303-4241-8bf3-1f5dd52980ae">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="1172"/>
+	<queryString>
+		<![CDATA[SELECT
+     clinic.`id` AS clinic_id,
+     clinic.`Name` AS clinic_Name,
+     clinic.`Age` AS clinic_Age,
+     resee.`id` AS resee_id,
+     resee.`date` AS resee_date,
+     resee.`diseses` AS resee_diseses,
+     resee.`notes` AS resee_notes
+FROM
+     `resee` resee INNER JOIN `clinic` clinic ON resee.`id` = clinic.`id`]]>
+	</queryString>
+	<field name="clinic_id" class="java.lang.Integer"/>
+	<field name="clinic_Name" class="java.lang.String"/>
+	<field name="clinic_Age" class="java.lang.Integer"/>
+	<field name="resee_id" class="java.lang.Integer"/>
+	<field name="resee_date" class="java.lang.String"/>
+	<field name="resee_diseses" class="java.lang.String"/>
+	<field name="resee_notes" class="java.lang.String"/>
+	<background>
+		<band height="802" splitType="Stretch">
+			<image>
+				<reportElement uuid="8ca6e398-7588-4037-8248-97b38914ffd8" x="0" y="0" width="555" height="624"/>
+				<imageExpression><![CDATA["D:\\dist\\img\\11.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement uuid="5f21aab9-5d2c-47aa-9996-05ca11f76a82" x="0" y="624" width="956" height="178"/>
+				<imageExpression><![CDATA["D:\\dist\\img\\111.png"]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="17" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="332" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="cc38221e-d3d7-4841-bf42-84185f042208" x="71" y="19" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="882a0c77-0c86-410c-8477-83e940f2aee7" x="0" y="77" width="430" height="33"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{clinic_Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4067baec-9d50-4902-81e3-00be97fb47db" x="0" y="110" width="415" height="32"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font size="18" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{clinic_Age}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="5f61ec5e-4bcb-450e-9899-e4dc6927b037" x="0" y="154" width="415" height="38"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{resee_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ed117bdd-d296-4bbb-bb5e-ba1a7a56cd63" x="0" y="192" width="415" height="36"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{resee_diseses}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="1f3fe901-980a-4b95-a151-4e67adf488a2" x="0" y="248" width="371" height="84"/>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{resee_notes}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
